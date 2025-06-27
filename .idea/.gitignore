@@ -1,0 +1,14 @@
+# Kotlin
+*.class
+*.log
+*.jar
+*.war
+
+# IntelliJ
+.idea/
+*.iml
+out/
+
+# OS
+.DS_Store
+Thumbs.db
