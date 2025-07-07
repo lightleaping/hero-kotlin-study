@@ -13,19 +13,89 @@ Kotlin 학습 및 Spring Boot 실습 기록 공간입니다.
 
 ---
 
-## 🗓 학습 일정
+# 📘 Kotlin Spring Boot REST API Practice
 
-| 강의 | 기간 | 상태 |
-|------|------|------|
-| Kotlin 입문 | 7/2 ~ 7/6 | 🔜 예정 |
-| Spring MVC | 7/7 ~ 7/13 | ⬜ |
-| 실전 앱 개발 | 7/14 ~ 7/22 | ⬜ |
+This repository contains step-by-step REST API practice built using **Kotlin + Spring Boot**. Each API endpoint demonstrates a key concept in request handling such as `@GetMapping`, `@RequestParam`, `@PathVariable`, and object binding.
+
+## ✅ Features Implemented
+
+### 1️⃣ Basic String Response
+
+GET /api/hello  
+**Response:**  
+hello kotlin
 
 ---
 
-## 🧪 실습 예시
+### 2️⃣ Path Variable Mapping
+
+GET /api/get-mapping/path-variable/{name}/{age}  
+**Example:** /api/get-mapping/path-variable/Soojin/24  
+**Response:** Soojin 24
+
+GET /api/get-mapping/path-variable2/{name}/{age}  
+Demonstrates Kotlin variable shadowing vs URL value extraction
+
+---
+
+### 3️⃣ Query Parameter Mapping
+
+GET /api/get-mapping/query-param?name=Soojin&age=24  
+**Response:** Soojin 24
+
+---
+
+### 4️⃣ Object Mapping (DTO)
+
+GET /api/get-mapping/query-param/object?name=Soojin&age=24&email=test@example.com&address=Seoul  
+Maps all query parameters into a `UserRequest` data class  
+**Response (JSON):**
+
+{
+  "name": "Soojin",
+  "age": 24,
+  "email": "test@example.com",
+  "address": "Seoul"
+}
+
+---
+
+### 5️⃣ Query Parameters as Map
+
+GET /api/get-mapping/query-param/map?name=Alex&age=30&phone-number=1234  
+Handles query parameters dynamically as a Map<String, Any>
+
+---
+
+## 🧾 Data Class
 
 ```kotlin
-fun main() {
-    println("Hello Kotlin!")
-}
+data class UserRequest (
+    var name: String? = null,
+    var age: Int? = null,
+    var email: String? = null,
+    var address: String? = null
+)
+```
+🛠 How to Run
+Make sure you have JDK 17+ and Gradle installed.
+./gradlew bootRun
+Then open:
+http://localhost:8080/api/hello
+Use Talend API Tester or Postman for parameterized requests.
+
+📁 Project Structure
+src
+└── main
+  └── kotlin
+    └── com.example.mvc
+      ├── MvcApplication.kt
+      ├── controller.get.GetApiController.kt
+      └── model.http.UserRequest.kt
+
+✍️ Author
+Created and maintained by [Your Name]
+Feel free to fork or contribute!
+
+📝 License
+This project is licensed under the MIT License.
