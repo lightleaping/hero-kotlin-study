@@ -87,6 +87,7 @@ http://localhost:8080/api/hello
 Use Talend API Tester or Postman for parameterized requests.
 
 📁 Project Structure
+
 src
 └── main
   └── kotlin
@@ -94,6 +95,7 @@ src
       ├── MvcApplication.kt
       ├── controller.get.GetApiController.kt
       └── model.http.UserRequest.kt
+      
 
 ✍️ Author
 Created and maintained by Soojin
