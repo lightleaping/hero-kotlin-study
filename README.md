@@ -79,7 +79,9 @@ data class UserRequest (
 ```
 🛠 How to Run
 Make sure you have JDK 17+ and Gradle installed.
+---
 ./gradlew bootRun
+---
 Then open:
 http://localhost:8080/api/hello
 Use Talend API Tester or Postman for parameterized requests.
@@ -94,7 +96,7 @@ src
       └── model.http.UserRequest.kt
 
 ✍️ Author
-Created and maintained by [Your Name]
+Created and maintained by Soojin
 Feel free to fork or contribute!
 
 📝 License
